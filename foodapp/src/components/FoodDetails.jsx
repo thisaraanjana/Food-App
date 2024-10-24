@@ -1,6 +1,6 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 export default function FoodDetails({ foodId }) {
-    const [food,setFood]=useState({})
+  const [food, setFood] = useState({});
   const URL = `https://api.spoonacular.com/recipes/${foodId}/information`;
   const API_KEY = "a0a06182dc424d779dabca5adb164c79";
   useEffect(() => {
@@ -9,13 +9,15 @@ export default function FoodDetails({ foodId }) {
       const data = await res.json();
       console.log(data);
       console.log(foodId);
-      setFood(data)
+      setFood(data);
     }
     fetchFood();
-  }, [foodId]);//identify fod is change and code is do change that details
-  return <div>
-    {foodId}
-    {food.title}
-    <img src={food.image} alt=""/>
-  </div>;
+  }, [foodId]); //identify fod is change and code is do change that details
+  return (
+    <div>
+      {foodId}
+      {food.title}
+      <img src={food.image} alt="" />
+    </div>
+  );
 }
