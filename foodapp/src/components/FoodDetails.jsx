@@ -12,12 +12,16 @@ export default function FoodDetails({ foodId }) {
       setFood(data);
     }
     fetchFood();
-  }, [foodId]); //identify fod is change and code is do change that details
-  return (
+  }, [foodId]);//identify fod is change and code is do change that details
+  return <div>
     <div>
-      {foodId}
-      {food.title}
-      <img src={food.image} alt="" />
-    </div>
-  );
+        <h1>{food.title}</h1>
+
+        <img src={food.image} alt="" />
+      </div>
+      <span>
+        <strong>{food.readyInMinutes} Minutes</strong>
+      </span>
+      <span>{food.vegetarian ? "vegetarian":"Non-vegetarian"}</span>
+  </div>;
 }
