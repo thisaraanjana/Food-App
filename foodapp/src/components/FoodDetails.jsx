@@ -28,7 +28,7 @@ export default function FoodDetails({ foodId }) {
           <strong>{food.readyInMinutes} Minutes</strong>
         </span>
         <span>
-          <strong> Serves{food.servings} people</strong>
+          <strong> Serves{food.servings} number of peoples</strong>
         </span>
         <span>
           <strong>{food.vegetarian ? " vegetarian" : " Non-vegetarian"}</strong>
